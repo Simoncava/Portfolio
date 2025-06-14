@@ -1,0 +1,383 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="it">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1" />\
+  <title>Galassia Creativa \'96 Portfolio</title>\
+\
+  <!-- Google font ultra bold -->\
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />\
+\
+  <style>\
+    /* Reset base */\
+    * \{\
+      margin: 0;\
+      padding: 0;\
+      box-sizing: border-box;\
+    \}\
+    html, body \{\
+      height: 100%;\
+      background: #000;\
+      color: #39FF14;\
+      font-family: 'Anton', sans-serif;\
+      overflow-x: hidden;\
+      scroll-behavior: smooth;\
+    \}\
+    body \{\
+      display: flex;\
+      flex-direction: column;\
+      align-items: center;\
+      min-height: 100vh;\
+    \}\
+\
+    /* Galaxy star layers */\
+    .stars \{\
+      position: fixed;\
+      top: 0; left: 0;\
+      width: 300%;\
+      height: 300%;\
+      pointer-events: none;\
+      z-index: -1;\
+      background-repeat: repeat;\
+    \}\
+    .stars.near \{\
+      background-image:\
+        radial-gradient(white 1.5px, transparent 1.5px);\
+      background-size: 4px 4px;\
+      opacity: 0.8;\
+      animation: starsNear 80s linear infinite;\
+    \}\
+    .stars.mid \{\
+      background-image:\
+        radial-gradient(white 1px, transparent 1px);\
+      background-size: 3px 3px;\
+      opacity: 0.5;\
+      animation: starsMid 140s linear infinite;\
+    \}\
+    .stars.far \{\
+      background-image:\
+        radial-gradient(white 0.8px, transparent 0.8px);\
+      background-size: 2px 2px;\
+      opacity: 0.3;\
+      animation: starsFar 240s linear infinite;\
+    \}\
+    @keyframes starsNear \{\
+      from \{ transform: translate3d(0, 0, 0); \}\
+      to \{ transform: translate3d(-50%, -50%, 0); \}\
+    \}\
+    @keyframes starsMid \{\
+      from \{ transform: translate3d(0, 0, 0); \}\
+      to \{ transform: translate3d(40%, -40%, 0); \}\
+    \}\
+    @keyframes starsFar \{\
+      from \{ transform: translate3d(0, 0, 0); \}\
+      to \{ transform: translate3d(-30%, 30%, 0); \}\
+    \}\
+\
+    /* Layout */\
+    header \{\
+      position: fixed;\
+      top: 1rem;\
+      right: 1rem;\
+      display: flex;\
+      gap: 1rem;\
+      font-size: 1.5rem;\
+      user-select: none;\
+      z-index: 10;\
+    \}\
+    header button \{\
+      background: none;\
+      border: none;\
+      color: #39FF14;\
+      cursor: pointer;\
+      font-weight: 900;\
+      transition: transform 0.3s ease, opacity 0.3s ease;\
+      opacity: 0.6;\
+    \}\
+    header button.active,\
+    header button:hover \{\
+      opacity: 1;\
+      transform: scale(1.2);\
+    \}\
+\
+    nav \{\
+      position: fixed;\
+      bottom: 1.5rem;\
+      display: flex;\
+      gap: 2rem;\
+      font-weight: 700;\
+      font-size: 1rem;\
+      z-index: 10;\
+      user-select: none;\
+      text-transform: uppercase;\
+      color: #39FF14;\
+    \}\
+    nav a \{\
+      text-decoration: none;\
+      border-bottom: 2px solid transparent;\
+      padding-bottom: 0.1rem;\
+      transition: border-color 0.3s ease;\
+    \}\
+    nav a:hover \{\
+      border-color: #39FF14;\
+    \}\
+\
+    main \{\
+      margin-top: 5rem;\
+      max-width: 900px;\
+      width: 90vw;\
+      padding-bottom: 6rem;\
+    \}\
+\
+    section \{\
+      margin-bottom: 6rem;\
+      color: #39FF14;\
+    \}\
+    h1, h2 \{\
+      font-weight: 900;\
+      margin-bottom: 1rem;\
+      letter-spacing: 0.06em;\
+    \}\
+    h1 \{\
+      font-size: 3rem;\
+      text-transform: uppercase;\
+    \}\
+    h2 \{\
+      font-size: 2rem;\
+      border-bottom: 2px solid #39FF14;\
+      padding-bottom: 0.3rem;\
+      margin-bottom: 2rem;\
+    \}\
+    p, a \{\
+      font-family: 'Arial', sans-serif;\
+      font-weight: 400;\
+      color: #d7ffd9;\
+      line-height: 1.6;\
+    \}\
+\
+    /* Buttons for download */\
+    .btn-download \{\
+      display: inline-block;\
+      border: 2px solid #39FF14;\
+      padding: 0.7rem 1.8rem;\
+      margin-right: 1rem;\
+      font-weight: 700;\
+      text-transform: uppercase;\
+      color: #39FF14;\
+      text-decoration: none;\
+      transition: background-color 0.3s ease, color 0.3s ease;\
+      cursor: pointer;\
+      border-radius: 4px;\
+      user-select: none;\
+    \}\
+    .btn-download:hover \{\
+      background-color: #39FF14;\
+      color: black;\
+    \}\
+\
+    /* Works grid */\
+    .works-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));\
+      gap: 2rem;\
+    \}\
+    .work-card \{\
+      background: #0b0b0b;\
+      border: 1.5px solid #39FF14;\
+      padding: 1.5rem;\
+      border-radius: 10px;\
+      transition: background-color 0.3s ease;\
+      cursor: pointer;\
+    \}\
+    .work-card:hover \{\
+      background-color: #192219;\
+    \}\
+    .work-title \{\
+      font-family: 'Anton', sans-serif;\
+      font-size: 1.5rem;\
+      font-weight: 900;\
+      margin-bottom: 0.5rem;\
+    \}\
+    .work-desc \{\
+      font-family: 'Arial', sans-serif;\
+      color: #b5f2b0;\
+      font-size: 0.9rem;\
+    \}\
+\
+    /* Responsive tweaks */\
+    @media (max-width: 600px) \{\
+      h1 \{ font-size: 2.5rem; \}\
+      h2 \{ font-size: 1.7rem; \}\
+      nav \{\
+        gap: 1rem;\
+        font-size: 0.9rem;\
+      \}\
+      header \{\
+        font-size: 1.3rem;\
+      \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+  <!-- Galaxy background stars layers -->\
+  <div class="stars far"></div>\
+  <div class="stars mid"></div>\
+  <div class="stars near"></div>\
+\
+  <!-- Language selector -->\
+  <header>\
+    <button id="btn-it" class="active" aria-label="Italiano">\uc0\u55356 \u56814 \u55356 \u56825 </button>\
+    <button id="btn-es" aria-label="Espa\'f1ol">\uc0\u55356 \u56810 \u55356 \u56824 </button>\
+  </header>\
+\
+  <!-- Navigation -->\
+  <nav id="nav-links">\
+    <a href="#home">Home</a>\
+    <a href="#works">Lavori</a>\
+    <a href="#cv">Scarica CV</a>\
+    <a href="#about">Chi sono</a>\
+    <a href="#contact">Contatti</a>\
+  </nav>\
+\
+  <main>\
+    <section id="home">\
+      <h1 id="headline">Benvenuto nella mia Galassia Creativa</h1>\
+      <p id="description">Esplora i miei progetti di graphic design e art direction.</p>\
+    </section>\
+\
+    <section id="works">\
+      <h2 id="works-title">Lavori</h2>\
+      <div class="works-grid" id="works-list">\
+        <article class="work-card">\
+          <h3 class="work-title">Progetto 1</h3>\
+          <p class="work-desc">Descrizione breve del progetto numero 1.</p>\
+        </article>\
+        <article class="work-card">\
+          <h3 class="work-title">Progetto 2</h3>\
+          <p class="work-desc">Descrizione breve del progetto numero 2.</p>\
+        </article>\
+        <article class="work-card">\
+          <h3 class="work-title">Progetto 3</h3>\
+          <p class="work-desc">Descrizione breve del progetto numero 3.</p>\
+        </article>\
+        <article class="work-card">\
+          <h3 class="work-title">Progetto 4</h3>\
+          <p class="work-desc">Descrizione breve del progetto numero 4.</p>\
+        </article>\
+      </div>\
+    </section>\
+\
+    <section id="cv">\
+      <h2 id="cv-title">Scarica CV</h2>\
+      <p id="cv-text">Scarica il mio Curriculum Vitae e il portfolio completo.</p>\
+      <a href="cv.pdf" download class="btn-download" id="download-cv">Scarica CV</a>\
+      <a href="portfolio.pdf" download class="btn-download" id="download-portfolio">Scarica Portfolio</a>\
+    </section>\
+\
+    <section id="about">\
+      <h2 id="about-title">Chi sono</h2>\
+      <p id="about-text">\
+        Sono un Art Director e Graphic Designer con una passione inesauribile per la creativit\'e0 e il colore. Credo nel potere delle idee audaci e nel design che fa emozionare.\
+      </p>\
+    </section>\
+\
+    <section id="contact">\
+      <h2 id="contact-title">Contatti</h2>\
+      <p id="contact-text">Hai un progetto ambizioso? Parliamone!</p>\
+      <a href="mailto:tuo@email.com" class="btn-download" id="email-link">\uc0\u55357 \u56551  Email</a>\
+    </section>\
+  </main>\
+\
+  <script>\
+    // Traduzioni\
+    const translations = \{\
+      it: \{\
+        nav: ["Home", "Lavori", "Scarica CV", "Chi sono", "Contatti"],\
+        headline: "Benvenuto nella mia Galassia Creativa",\
+        description: "Esplora i miei progetti di graphic design e art direction.",\
+        worksTitle: "Lavori",\
+        cvTitle: "Scarica CV",\
+        cvText: "Scarica il mio Curriculum Vitae e il portfolio completo.",\
+        aboutTitle: "Chi sono",\
+        aboutText: "Sono un Art Director e Graphic Designer con una passione inesauribile per la creativit\'e0 e il colore. Credo nel potere delle idee audaci e nel design che fa emozionare.",\
+        contactTitle: "Contatti",\
+        contactText: "Hai un progetto ambizioso? Parliamone!",\
+        downloadCV: "Scarica CV",\
+        downloadPortfolio: "Scarica Portfolio",\
+        emailLabel: "\uc0\u55357 \u56551  Email"\
+      \},\
+      es: \{\
+        nav: ["Inicio", "Trabajos", "Descargar CV", "Qui\'e9n soy", "Contactos"],\
+        headline: "Bienvenido a mi Galaxia Creativa",\
+        description: "Explora mis proyectos de dise\'f1o gr\'e1fico y direcci\'f3n de arte.",\
+        worksTitle: "Trabajos",\
+        cvTitle: "Descargar CV",\
+        cvText: "Descarga mi Curr\'edculum Vitae y el portafolio completo.",\
+        aboutTitle: "Qui\'e9n soy",\
+        aboutText: "Soy un Director de Arte y Dise\'f1ador Gr\'e1fico con una pasi\'f3n infinita por la creatividad y el color. Creo en el poder de las ideas audaces y en el dise\'f1o que emociona.",\
+        contactTitle: "Contactos",\
+        contactText: "\'bfTienes un proyecto ambicioso? \'a1Hablemos!",\
+        downloadCV: "Descargar CV",\
+        downloadPortfolio: "Descargar Portafolio",\
+        emailLabel: "\uc0\u55357 \u56551  Correo"\
+      \}\
+    \};\
+\
+    // Elementi da tradurre\
+    const elements = \{\
+      navLinks: document.querySelectorAll('nav a'),\
+      headline: document.getElementById('headline'),\
+      description: document.getElementById('description'),\
+      worksTitle: document.getElementById('works-title'),\
+      cvTitle: document.getElementById('cv-title'),\
+      cvText: document.getElementById('cv-text'),\
+      downloadCV: document.getElementById('download-cv'),\
+      downloadPortfolio: document.getElementById('download-portfolio'),\
+      aboutTitle: document.getElementById('about-title'),\
+      aboutText: document.getElementById('about-text'),\
+      contactTitle: document.getElementById('contact-title'),\
+      contactText: document.getElementById('contact-text'),\
+      emailLink: document.getElementById('email-link'),\
+    \};\
+\
+    const btnIt = document.getElementById('btn-it');\
+    const btnEs = document.getElementById('btn-es');\
+\
+    function switchLanguage(lang) \{\
+      const t = translations[lang];\
+      // Nav\
+      elements.navLinks.forEach((link, i) => link.textContent = t.nav[i]);\
+      // Main text\
+      elements.headline.textContent = t.headline;\
+      elements.description.textContent = t.description;\
+      elements.worksTitle.textContent = t.worksTitle;\
+      elements.cvTitle.textContent = t.cvTitle;\
+      elements.cvText.textContent = t.cvText;\
+      elements.downloadCV.textContent = t.downloadCV;\
+      elements.downloadPortfolio.textContent = t.downloadPortfolio;\
+      elements.aboutTitle.textContent = t.aboutTitle;\
+      elements.aboutText.textContent = t.aboutText;\
+      elements.contactTitle.textContent = t.contactTitle;\
+      elements.contactText.textContent = t.contactText;\
+      elements.emailLink.textContent = t.emailLabel;\
+\
+      // Bottoni lingua style\
+      btnIt.classList.toggle('active', lang === 'it');\
+      btnEs.classList.toggle('active', lang === 'es');\
+    \}\
+\
+    btnIt.addEventListener('click', () => switchLanguage('it'));\
+    btnEs.addEventListener('click', () => switchLanguage('es'));\
+\
+    // Iniziale italiano\
+    switchLanguage('it');\
+  </script>\
+</body>\
+</html>}
